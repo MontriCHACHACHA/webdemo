@@ -1,164 +1,189 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
     <title>Bootstrap demo</title>
-</head>
-<style>
+  </head>
+  <style>
     .mystyle {
-        color: rgb(255, 17, 8);
+      color: rgb(255, 17, 8);
     }
 
     .tb {
-        margin-top: 20px;
-        width: 247px;
+      margin-top: 20px;
+      width: 247px;
     }
 
     table {
-        border-collapse: collapse;
+      border-collapse: collapse;
     }
 
     th {
-        background-color: bisque;
+      background-color: bisque;
     }
 
     th,
     td {
-        border: 1px solid black;
+      border: 1px solid black;
     }
 
     .p01 {
-        text-align: center;
-        margin-bottom: 5px;
+      text-align: center;
+      margin-bottom: 5px;
     }
 
     .p02 {
-        margin-top: 2px;
-        margin-bottom: 5px;
-        font-weight: bold;
+      margin-top: 2px;
+      margin-bottom: 5px;
+      font-weight: bold;
     }
 
     .p03 {
-        font-weight: bold;
-        font-size: 18px;
+      font-weight: bold;
+      font-size: 18px;
     }
 
     .b01 {
-        margin-top: 20px;
+      margin-top: 20px;
     }
-    .b02{
-        margin-top: 10px;
+    .b02 {
+      margin-top: 10px;
     }
-</style>
+  </style>
 
-<body>
+  <body>
     <div>
-        <div class="div01">
-            <h1 id="cat01">สวัสดีชาวโลก</h1>
-            <button type="button" style="cursor: pointer;" onclick="myFunction()">เปลี่ยนสี</button>
-        </div><br>
-        <div>
-            <button style="cursor: pointer;" onclick="document.getElementById('cat02').src='Idle.png'">แมวยืน</button>
+      <div class="div01">
+        <h1 id="cat01">สวัสดีชาวโลก</h1>
+        <button type="button" style="cursor: pointer" onclick="myFunction()">
+          เปลี่ยนสี
+        </button>
+      </div>
+      <br />
+      <div>
+        <button
+          style="cursor: pointer"
+          onclick="document.getElementById('cat02').src='Idle.png'"
+        >
+          แมวยืน
+        </button>
 
-            <img id="cat02" src="Idle.png" alt="">
-            <button style="cursor: pointer;"
-                onclick="document.getElementById('cat02').src='Slide.png'">แมวสไลด์</button><br>
-            <button class="b02" onclick="date()">แสดงเวลา</button>
-            <p id="demo"></p>
-        </div>
+        <img id="cat02" src="Idle.png" alt="" />
+        <button
+          style="cursor: pointer"
+          onclick="document.getElementById('cat02').src='Slide.png'"
+        >
+          แมวสไลด์</button
+        ><br />
 
+        <p id="demo"></p>
+      </div>
 
+      <button
+        type="button"
+        onclick="document.getElementById('tb01').style.display='';"
+      >
+        แสดงตาราง
+      </button>
+      <button
+        type="button"
+        onclick="document.getElementById('tb01').style.display='none';"
+      >
+        ซ่อนตาราง
+      </button>
+      <br />
+      <div id="tb01" class="tb">
+        <table>
+          <p class="p01">ตารางสินค้า</p>
+          <th>รายการที่ 1</th>
+          <th>รายการที่ 2</th>
+          <th>รายการที่ 3</th>
 
-        <button type="button" onclick="document.getElementById('tb01').style.display='';">แสดงตาราง</button>
-        <button type="button" onclick="document.getElementById('tb01').style.display='none';">ซ่อนตาราง</button>
-        <br>
-        <div id="tb01" class="tb">
-            <table>
-                <p class="p01">ตารางสินค้า</p>
-                <th>รายการที่ 1</th>
-                <th>รายการที่ 2</th>
-                <th>รายการที่ 3</th>
+          <tr>
+            <td>8</td>
+            <td>16</td>
+            <td>32</td>
+          </tr>
+          <tr>
+            <td>64</td>
+            <td>128</td>
+            <td>256</td>
+          </tr>
+        </table>
+      </div>
+      <br />
 
-                <tr>
-                    <td>8</td>
-                    <td>16</td>
-                    <td>32</td>
-                </tr>
-                <tr>
-                    <td>64</td>
-                    <td>128</td>
-                    <td>256</td>
-                </tr>
-            </table>
-        </div><br>
+      <div>
+        <p class="p02">Number#1</p>
+        <input id="input1" type="text" /><br />
 
-        <div>
-            <p class="p02">Number#1</p>
-            <input id="input1" type="text"><br>
+        <p class="p02">Number#2</p>
+        <input id="input2" type="text" /><br />
 
-            <p class="p02">Number#2</p>
-            <input id="input2" type="text"><br>
+        <p class="p02">Number#3</p>
+        <input id="input3" type="text" /><br />
 
-            <p class="p02">Number#3</p>
-            <input id="input3" type="text"><br>
+        <button class="b01" onclick="submit()">submit</button>
 
-            <button class="b01" onclick="submit()">submit</button>
-
-            <p id="result1" class="p03">ค่าเฉลี่ยคือ</p>
-            <p id="result2" class="p03">ค่าสูงสุดคือ</p>
-            <p id="result3" class="p03">ค่าต่ำสุดคือ</p>
-        </div>
+        <p id="result1" class="p03">ค่าเฉลี่ยคือ</p>
+        <p id="result2" class="p03">ค่าสูงสุดคือ</p>
+        <p id="result3" class="p03">ค่าต่ำสุดคือ</p>
+      </div>
     </div>
 
-
     <script>
-        function date() {
-            const date = new Date
+      function date() {
+        const date = new Date();
 
-            const result = date.toLocaleDateString('th-TH', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                hour: 'numeric',
-                minute: 'numeric',
-                second: 'numeric',
-            })
+        const result = date.toLocaleDateString("th-TH", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          hour: "numeric",
+          minute: "numeric",
+          second: "numeric",
+        });
+        document.getElementById("demo").innerHTML = result;
+      }
 
-            var p = document.getElementById("demo");
-            p.innerHTML = result;
+      setInterval("date()", 1000);
 
-        }
+      function submit() {
+        var input1 = document.getElementById("input1");
+        var input2 = document.getElementById("input2");
+        var input3 = document.getElementById("input3");
 
-        function submit() {
-            var input1 = document.getElementById("input1");
-            var input2 = document.getElementById("input2");
-            var input3 = document.getElementById("input3");
+        var result1 = document.getElementById("result1");
+        var result2 = document.getElementById("result2");
+        var result3 = document.getElementById("result3");
 
-            var result1 = document.getElementById("result1");
-            var result2 = document.getElementById("result2");
-            var result3 = document.getElementById("result3");
+        var result01 =
+          (parseInt(input1.value) +
+            parseInt(input2.value) +
+            parseInt(input3.value)) /
+          3;
+        var result02 = Math.max(
+          parseInt(input1.value),
+          parseInt(input2.value),
+          parseInt(input3.value)
+        );
+        var result03 = Math.min(
+          parseInt(input1.value),
+          parseInt(input2.value),
+          parseInt(input3.value)
+        );
 
-            var result01 = (parseInt(input1.value) + parseInt(input2.value) + parseInt(input3.value)) / 3;
-            var result02 = Math.max(parseInt(input1.value), parseInt(input2.value), parseInt(input3.value));
-            var result03 = Math.min(parseInt(input1.value), parseInt(input2.value), parseInt(input3.value));
+        result1.innerHTML = "ค่าเฉลี่ยคือ   " + result01;
+        result2.innerHTML = "ค่าสูงสุดคือ   " + result02;
+        result3.innerHTML = "ค่าต่ำสุดคือ   " + result03;
+      }
 
-            result1.innerHTML = "ค่าเฉลี่ยคือ   " + result01;
-            result2.innerHTML = "ค่าสูงสุดคือ   " + result02;
-            result3.innerHTML = "ค่าต่ำสุดคือ   " + result03;
-
-
-        }
-
-        function myFunction() {
-            var element = document.getElementById("cat01");
-            element.classList.toggle("mystyle");
-        }
-
-
+      function myFunction() {
+        var element = document.getElementById("cat01");
+        element.classList.toggle("mystyle");
+      }
     </script>
-</body>
-
+  </body>
 </html>
